@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&family=Pixelify+Sans:wght@400..700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Pixelify Sans", serif;
+  /* overflow-x: hidden; */
+  text-decoration: none;
+}
+a {
+  color: white;
+}
+
+body a,
+body button,
+body [type="button"],
+body input[type="reset"],
+body input[type="submit"],
+body [role="button"],
+::-webkit-search-cancel-button,
+::-webkit-search-decoration,
+::-webkit-scrollbar-button,
+::-webkit-file-upload-button,
+body .sweezy-custom-cursor-hover,
+body button.sweezy-custom-cursor-hover,
+body a.sweezy-custom-cursor-hover {
+  cursor: url(/Pictures/pointer.png) 0 1, auto !important;
+}
+body {
+  cursor: url(/Pictures/cursor.png) 0 1, auto !important;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  background-color: #000000;
+}
+
+.page {
+  color: rgb(15, 15, 15);
+  width: 100vw;
+  --color: #6d6e7119;
+  background-color: #0f152400;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 55px 55px;
+}
+
+.page .theader h1,
+.theader p {
+  text-align: center;
+  width: 60%;
+  margin: 8px auto;
+}
+.theader p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.theader h1 {
+  font-size: 4rem;
+  text-shadow: 1px 1px 1px black;
+  color: #ff9500;
+}
+
+.theader {
+  margin: 1.2rem 0;
+}
+.teachercontainer {
+  height: 100%;
+  position: relative;
+}
+
+.gridcontainer {
+  width: 90vw;
+  height: 800px;
+  margin: 12px auto;
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.thefrontcard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* margin: 0.6rem; */
+  background-color: #fff;
+  padding: 0.7rem;
+  border: 0.2px solid rgba(105, 105, 105, 0.361);
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.Culogo- img {
+  margin-bottom: 1rem;
+  width: 12.9rem;
+}
+
+.teacherpic {
+  width: 8rem;
+  height: 9.5rem;
+  border-radius: 2px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.teacherpic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teacher-info h3,
+p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.teacher-info h3 {
+  margin-top: 12px;
+  color: red;
+  font-weight: 500;
+  padding-bottom: 6px;
+}
+
+#Position {
+  font-weight: 700;
+}
+
+#Department {
+  font-size: 12px;
+}
+
+.teacher-contacts {
+  color: #0000006f;
+  margin: 1rem 0;
+}
+
+.thebackcard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* margin: 0.6rem; */
+  background: white;
+  background-image: url(/Pictures/whitetexturebg.jpg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.99;
+  padding: 0.7rem;
+  border: 0.2px solid rgba(105, 105, 105, 0.361);
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.teachercard {
+  overflow-x: visible;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d !important;
+  transition: all 0.5s ease;
+}
+
+.teachercard:hover {
+  transform: rotateY(180deg);
+}
+
+.teacherotherdata {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.moreabtteacher h2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.moreabtteacher p {
+  margin-top: 1rem;
+  font-size: 0.91rem;
+}
+.teacherContacts h2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#socialid {
+  width: 3.5rem;
+  margin: auto 0.2rem;
+}
+
+@media (max-width: 1511px) {
+  .gridcontainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+@media (max-width: 895px) {
+  .gridcontainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .theader p {
+    width: 90%;
+  }
+
+  .teacher-info h3 {
+    font-size: 1rem;
+  }
+
+  .Culogo- img {
+    margin-bottom: 1rem;
+    width: 10.9rem;
+  }
+
+  
+.teacherpic {
+  width: 7rem;
+  height: 8.5rem;
+}
+
+}
+
+
+@media (max-width: 791px) {
+  .gridcontainer {
+    height: 1050px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .page .theader h1{
+    font-size: 44px;
+  }
+
+  .theader p{
+    font-size: 14px;
+  }
+  .Culogo- img {
+    margin-bottom: 1rem;
+    width: 7.9rem;
+}
+  .teacherpic {
+    width: 6rem;
+    height: 7.5rem;
+  }
+  
+  .teacher-info h3 {
+    font-size: 0.9rem;
+  }
+  .teacher-info  {
+    font-size: 0.8rem;
+  }
+  .teacherContacts h2 {
+    font-size: 1rem;
+  }
+  .moreabtteacher p {
+    font-size: 0.8rem;
+  }
+  #socialid {
+    width: 2.5rem;
+    margin: 0rem;
+  }
+}
+
+
+@media (max-width: 425px) {
+
+  .teacher-contacts {
+    display: none;
+  }
+
+  .gridcontainer {
+    height: 1050px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .page .theader h1{
+    font-size: 44px;
+  }
+
+  .theader p{
+    font-size: 14px;
+  }
+  .Culogo- img {
+    margin-bottom: 1rem;
+    width: 7.9rem;
+}
+  .teacherpic {
+    width: 6rem;
+    height: 7.5rem;
+  }
+  
+  .teacher-info h3 {
+    font-size: 0.9rem;
+  }
+  .teacher-info  {
+    font-size: 0.8rem;
+  }
+  .teacherContacts h2 {
+    font-size: 1rem;
+  }
+  .moreabtteacher p {
+    font-size: 0.8rem;
+  }
+  #socialid {
+    width: 2.5rem;
+    margin: 0rem;
+  }
+}
+

@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&family=Pixelify+Sans:wght@400..700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Pixelify Sans", serif;
+  overflow-x: hidden;
+  text-decoration: none;
+  color: #faeedd;
+  text-align: center;
+  overflow-y: hidden;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 54);
+}
+.container{
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    /* border: 2px solid white; */
+}
+.container1{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 70%;
+}
+
+.container1 img{
+    height: 100%;
+    /* filter: drop-shadow(0px -2px 0px #83133C);*/
+    filter: drop-shadow(-3px -3px 0px #fff5f9);
+    object-fit: cover;
+}
+
+
+@media (max-width: 957px) {
+.container{
+    font-size: 1.5rem;
+}
+}
+@media (max-width: 425px) {
+.container{
+    font-size: 1rem;
+}
+}
