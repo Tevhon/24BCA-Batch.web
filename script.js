@@ -1,8 +1,8 @@
-const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-    // lerp: 1 
-});
+// const scroll = new LocomotiveScroll({
+//     el: document.querySelector('[data-scroll-container]'),
+//     smooth: true,
+//     // lerp: 1 
+// });
 
 var typed = new Typed('.Typejs', {
     strings: ["Notes", "Assignments", "PYQ Paper", "Teachers Info"],
