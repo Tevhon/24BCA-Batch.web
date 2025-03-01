@@ -3,7 +3,6 @@
 //     smooth: true,
 //     // lerp: 1 
 // });
-
 var typed = new Typed('.Typejs', {
     strings: ["Notes", "Assignments", "PYQ Paper", "Teachers Info"],
     typeSpeed: 70,
