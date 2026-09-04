@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&family=Pixelify+Sans:wght@400..700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Pixelify Sans", serif;
+  overflow-x: hidden;
+  text-decoration: none;
+}
+
+body a,
+body button,
+body [role="button"],
+::-webkit-scrollbar-button {
+  cursor: url(../../Pictures/pointer.png) 0 1, auto !important;
+}
+body {
+  cursor: url(../../Pictures/cursor.png) 0 1, auto !important;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  background-color: #000000;
+}
+
+.pbody {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* ===== Back bar ===== */
+.backbar {
+  background-color: #020617;
+  padding: 1rem 2rem;
+}
+.backbar a {
+  color: #ff9500;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.backbar a:hover {
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Hero ===== */
+.page1 {
+  width: 100vw;
+  min-height: 38vh;
+  display: flex;
+  align-items: center;
+  --color: #e1e1e121;
+  background-color: #020617;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+  background-size: 45px 45px;
+}
+
+.herdata {
+  gap: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px;
+  width: 75%;
+  margin: 3rem auto;
+}
+.herdata h1 {
+  color: #f3f3f3;
+  font-size: 3.4rem;
+  font-weight: 800;
+  text-shadow: 2px 1px 0px #ff9500;
+}
+.herdata p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 65%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ===== Calculator wrap (checkered light) ===== */
+.calcwrap {
+  --color: #e1e1e1;
+  background-color: #f3f3f3;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+  background-size: 55px 55px;
+  padding: 3rem 0 4rem 0;
+  min-height: 60vh;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  width: 70%;
+  margin: 0 auto 2rem auto;
+}
+
+.tabbtn {
+  cursor: pointer;
+  outline: 1px dotted rgb(37, 37, 37);
+  outline-offset: -4px;
+  background: hsl(0deg 0% 85%);
+  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff, inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+  font-family: "Pixelify Sans", serif;
+  font-size: 1.05rem;
+  padding: 0.8rem 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.tabbtn.active {
+  background: #ff9500;
+  color: #020617;
+}
+.tabbtn:active {
+  box-shadow: inset -1px -1px #fff, inset 1px 1px #292929, inset -2px -2px #ffffff, inset 2px 2px rgb(158, 158, 158);
+}
+
+.panel { display: none; width: 70%; margin: 0 auto; }
+.panel.active { display: block; }
+
+.calcbox {
+  background: #fff;
+  outline: 1px dotted rgb(37, 37, 37);
+  outline-offset: -4px;
+  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff, inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+  padding: 1.6rem;
+  overflow-x: auto;
+}
+
+table { width: 100%; border-collapse: collapse; min-width: 520px; }
+th {
+  text-align: left;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  padding-bottom: 10px;
+}
+td { padding: 7px 8px 7px 0; }
+tr td:first-child { width: 30px; color: #888; font-family: system-ui, sans-serif; }
+
+input[type="text"], input[type="number"], select {
+  width: 100%;
+  background: #f3f3f3;
+  border: 1px solid #b8b8b8;
+  color: #020617;
+  padding: 8px 9px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.92rem;
+}
+input:focus, select:focus { outline: 2px solid #ff9500; }
+
+.rmbtn {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 1.05rem;
+  padding: 6px;
+}
+.rmbtn:hover { color: #cf0000; }
+
+.rowactions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.addbtn {
+  cursor: pointer;
+  background: none;
+  border: 2px dashed #ff9500;
+  color: #ff9500;
+  padding: 0.7rem 1.2rem;
+  font-family: "Pixelify Sans", serif;
+  font-size: 0.95rem;
+}
+.addbtn:hover { background: rgba(255, 149, 0, 0.08); }
+
+.calcbtn {
+  cursor: pointer;
+  outline: 1px dotted rgb(37, 37, 37);
+  outline-offset: -4px;
+  background: #020617;
+  color: #fff;
+  box-shadow: inset -1px -1px #292929, inset 1px 1px #4a4a4a, inset -2px -2px rgb(80, 80, 80), inset 2px 2px #4a4a4a;
+  font-family: "Pixelify Sans", serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.75rem 1.8rem;
+}
+.calcbtn:active {
+  box-shadow: inset -1px -1px #4a4a4a, inset 1px 1px #292929, inset -2px -2px #4a4a4a, inset 2px 2px rgb(80, 80, 80);
+}
+
+.resultbox {
+  margin-top: 1.8rem;
+  background: #fde047;
+  border: 4px solid #db9602;
+  outline: 1px dotted rgba(0, 0, 0, 0.833);
+  outline-offset: -4px;
+  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff, inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+  padding: 1.6rem 1.8rem;
+  display: none;
+}
+.resultbox.show { display: block; }
+
+.resulttop {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.resultbig {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #020617;
+}
+
+.verdict {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 12px;
+  border: 2px solid #020617;
+}
+.verdict.bad { background: #ffb3b3; color: #7a0000; }
+.verdict.avg { background: #fff3b0; color: #5c4b00; }
+.verdict.good { background: #b7f5c2; color: #0a5c1f; }
+.verdict.great { background: #020617; color: #ff9500; border-color: #ff9500; }
+
+.refLink {
+  color: #ff9500;
+  text-decoration: underline;
+}
+.resultlabel {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #3a3a3a;
+  font-size: 0.92rem;
+  margin-top: 2px;
+}
+.resultbreak {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #3a3a3a;
+}
+
+.notebox {
+  margin-top: 2rem;
+  display: flex;
+  gap: 12px;
+  background: #fff;
+  outline: 1px dotted rgb(37, 37, 37);
+  outline-offset: -4px;
+  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff, inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+  padding: 1.3rem 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+  color: #333;
+}
+.notebox i { color: #ff9500; margin-top: 3px; }
+
+.scaletable { margin-top: 14px; font-size: 0.85rem; }
+.scaletable td { padding: 3px 10px 3px 0; color: #555; }
+.scaletable td:nth-child(2n) { font-weight: 700; color: #020617; }
+
+/* ===== Footer ===== */
+.calcfooter {
+  background-color: #070b15;
+  color: #f3f3f3;
+  text-align: center;
+  padding: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1020px) {
+  .herdata h1 { font-size: 2.4rem; }
+  .herdata p { width: 100%; font-size: 1rem; }
+  .tabs, .panel { width: 92%; }
+  .resultbig { font-size: 2rem; }
+}

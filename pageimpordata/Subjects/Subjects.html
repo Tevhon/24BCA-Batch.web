@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subjects & Curriculum — CU24BCA</title>
+  <meta name="description" content="Semester-wise BCA subjects at Chandigarh University, based on the official course curriculum." />
+  <link rel="icon" href="../../Pictures/webLogo.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" />
+
+  <link rel="stylesheet" href="../../css/tokens.css" />
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/resources.css" />
+  <script src="../../js/base.js"></script>
+  <script src="../../js/theme.js"></script>
+</head>
+<body>
+  <div id="site-header-mount"></div>
+
+  <main id="main-content">
+    <section class="resource-hero">
+      <div class="container">
+        <span class="resource-hero-icon">🗂️</span>
+        <h1>Subjects &amp; Curriculum</h1>
+        <p>What's taught in each semester of the BCA program, based on Chandigarh University's official course curriculum. Use this to know which semester a subject like DBMS or Java falls under.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="resource-toolbar">
+          <div class="chip-row" data-sem-chips>
+            <button class="chip" data-sem="all" aria-pressed="true">All Semesters</button>
+            <button class="chip" data-sem="1" aria-pressed="false">Sem 1</button>
+            <button class="chip" data-sem="2" aria-pressed="false">Sem 2</button>
+            <button class="chip" data-sem="3" aria-pressed="false">Sem 3</button>
+            <button class="chip" data-sem="4" aria-pressed="false">Sem 4</button>
+            <button class="chip" data-sem="5" aria-pressed="false">Sem 5</button>
+            <button class="chip" data-sem="6" aria-pressed="false">Sem 6</button>
+          </div>
+          <div class="search-shell">
+            <div class="search-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+              <input type="search" data-subject-filter placeholder="Search a subject — DBMS, Java…" aria-label="Search subjects" autocomplete="off" />
+            </div>
+          </div>
+        </div>
+
+        <div class="sem-grid" data-subjects-grid>
+          <div class="skeleton" style="height:220px;"></div>
+          <div class="skeleton" style="height:220px;"></div>
+          <div class="skeleton" style="height:220px;"></div>
+        </div>
+
+        <p style="margin-top: var(--space-6); font-size: var(--fs-sm); color: var(--color-text-muted);">
+          Source: <a href="https://www.cuchd.in/uic/computing/bca-course-curriculum.php" target="_blank" rel="noopener" style="color: var(--color-primary); font-weight:600;">Official BCA course curriculum, cuchd.in ↗</a>. Electives are summarised — check the official page for the full list.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="../../js/data.js"></script>
+  <script src="../../js/toast.js"></script>
+  <script src="../../js/bookmarks.js"></script>
+  <script src="../../js/recents.js"></script>
+  <script src="../../js/search.js"></script>
+  <script src="../../js/partials.js"></script>
+  <script src="../../js/nav.js"></script>
+  <script>
+    (function () {
+      function escapeHtml(str) {
+        const div = document.createElement("div");
+        div.textContent = str;
+        return div.innerHTML;
+      }
+      function highlight(text, q) {
+        if (!q) return escapeHtml(text);
+        const idx = text.toLowerCase().indexOf(q.toLowerCase());
+        if (idx === -1) return escapeHtml(text);
+        return escapeHtml(text.slice(0, idx)) + "<mark>" + escapeHtml(text.slice(idx, idx + q.length)) + "</mark>" + escapeHtml(text.slice(idx + q.length));
+      }
+
+      function render(query) {
+        const grid = document.querySelector("[data-subjects-grid]");
+        const { SUBJECTS_BY_SEM, SEM_LABELS } = window.CU24Data;
+        const q = (query || "").trim().toLowerCase();
+
+        const cards = Object.keys(SUBJECTS_BY_SEM)
+          .map((sem) => {
+            const subjects = SUBJECTS_BY_SEM[sem];
+            const matches = !q || subjects.some((s) => s.toLowerCase().includes(q));
+            if (!matches) return "";
+            const list = subjects.map((s) => "<li>" + highlight(s, query) + "</li>").join("");
+            return (
+              '<div class="card sem-card" data-sem="' + sem + '">' +
+              '<div class="sem-card-top"><h3>Semester ' + SEM_LABELS[sem] + "</h3>" +
+              '<span class="badge badge-notice">' + subjects.length + " subjects</span></div>" +
+              '<ul style="font-size: var(--fs-sm); color: var(--color-text-secondary); padding-left: 1.1rem; line-height: 1.9;">' + list + "</ul>" +
+              "</div>"
+            );
+          })
+          .filter(Boolean)
+          .join("");
+
+        grid.innerHTML = cards ||
+          '<div class="state-block" style="grid-column: 1 / -1;"><span class="state-icon">🔍</span><h3>No subject matches “' + escapeHtml(query) + '”</h3><p>Try a different keyword, like a subject name or abbreviation.</p></div>';
+      }
+
+      render("");
+      const input = document.querySelector("[data-subject-filter]");
+      let t;
+      input.addEventListener("input", () => {
+        clearTimeout(t);
+        t = setTimeout(() => render(input.value), 120);
+      });
+
+      document.querySelector("[data-sem-chips]").addEventListener("click", (e) => {
+        const chip = e.target.closest(".chip");
+        if (!chip) return;
+        document.querySelectorAll("[data-sem-chips] .chip").forEach((c) => c.setAttribute("aria-pressed", "false"));
+        chip.setAttribute("aria-pressed", "true");
+        const sem = chip.getAttribute("data-sem");
+        document.querySelectorAll("[data-subjects-grid] .sem-card").forEach((card) => {
+          card.classList.toggle("is-hidden", sem !== "all" && card.getAttribute("data-sem") !== sem);
+        });
+      });
+
+      const hashMatch = window.location.hash.match(/^#sem(\d)$/);
+      if (hashMatch) {
+        const targetChip = document.querySelector('[data-sem-chips] .chip[data-sem="' + hashMatch[1] + '"]');
+        if (targetChip) targetChip.click();
+      }
+    })();
+  </script>
+</body>
+</html>

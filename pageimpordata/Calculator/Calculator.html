@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA / CGPA Calculator | 24-BCA-Batch</title>
+    <link rel="stylesheet" href="Calculator.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+        integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <main>
+
+        <div class="backbar">
+            <a href="../../index.html"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        </div>
+
+        <div class="page1">
+            <div class="herdata">
+                <h1>SGPA / CGPA Calculator</h1>
+                <p>Built around Chandigarh University's 10-point credit-weighted grading scale. Add your subjects
+                    or semesters below to get an instant result.</p>
+            </div>
+        </div>
+
+        <div class="calcwrap">
+
+            <div class="tabs">
+                <button class="tabbtn active" data-tab="sgpa">Semester SGPA</button>
+                <button class="tabbtn" data-tab="cgpa">Overall CGPA</button>
+            </div>
+
+            <!-- SGPA PANEL -->
+            <div class="panel active" id="panel-sgpa">
+                <div class="calcbox">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Subject</th>
+                                <th>Credits</th>
+                                <th>Grade</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="sgpa-rows"></tbody>
+                    </table>
+
+                    <div class="rowactions">
+                        <button class="addbtn" id="add-subject"><i class="fa-solid fa-plus"></i> Add Subject</button>
+                        <button class="calcbtn" id="calc-sgpa">Calculate SGPA</button>
+                    </div>
+                </div>
+
+                <div class="resultbox" id="sgpa-result">
+                    <div class="resulttop">
+                        <div class="resultbig" id="sgpa-value">0.00</div>
+                        <span class="verdict" id="sgpa-verdict"></span>
+                    </div>
+                    <div class="resultlabel">Semester Grade Point Average</div>
+                    <div class="resultbreak" id="sgpa-breakdown"></div>
+                </div>
+            </div>
+
+            <!-- CGPA PANEL -->
+            <div class="panel" id="panel-cgpa">
+                <div class="calcbox">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Semester</th>
+                                <th>SGPA</th>
+                                <th>Credits</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cgpa-rows"></tbody>
+                    </table>
+
+                    <div class="rowactions">
+                        <button class="addbtn" id="add-semester"><i class="fa-solid fa-plus"></i> Add Semester</button>
+                        <button class="calcbtn" id="calc-cgpa">Calculate CGPA</button>
+                    </div>
+                </div>
+
+                <div class="resultbox" id="cgpa-result">
+                    <div class="resulttop">
+                        <div class="resultbig" id="cgpa-value">0.00</div>
+                        <span class="verdict" id="cgpa-verdict"></span>
+                    </div>
+                    <div class="resultlabel">Cumulative Grade Point Average</div>
+                    <div class="resultbreak" id="cgpa-breakdown"></div>
+                </div>
+            </div>
+
+            <div class="notebox">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>
+                    <p>Uses the same grading scale and credit-weighted formula as
+                        <a href="https://cusgpa.netlify.app/sgpa-calculator" target="_blank" class="refLink">cusgpa.netlify.app</a>:
+                        <strong>GPA = &Sigma;(Credits &times; Grade Points) &divide; &Sigma; Credits</strong>.
+                        Treat this as an estimate — always confirm your official SGPA/CGPA on CU-IMS.</p>
+                    <table class="scaletable">
+                        <tr><td>A+</td><td>10</td><td>A</td><td>9</td><td>B+</td><td>8</td><td>B</td><td>7</td><td>C+</td><td>6</td></tr>
+                        <tr><td>C</td><td>5</td><td>D+</td><td>4</td><td>D</td><td>3</td><td>E+</td><td>2</td><td>E</td><td>1</td><td>F+</td><td>0</td></tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="calcfooter">
+            <p>Made with ♥ for the 24-BCA batch · Chandigarh University</p>
+        </footer>
+
+    </main>
+
+    <script src="Calculator.js"></script>
+</body>
+
+</html>

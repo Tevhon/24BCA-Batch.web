@@ -22,10 +22,14 @@ body [role="button"],
 body .sweezy-custom-cursor-hover,
 body button.sweezy-custom-cursor-hover,
 body a.sweezy-custom-cursor-hover {
-  cursor: url(./Pictures/pointer.png) 0 1, auto !important;
+  cursor:
+    url(./Pictures/pointer.png) 0 1,
+    auto !important;
 }
 body {
-  cursor: url(./Pictures/cursor.png) 0 1, auto !important;
+  cursor:
+    url(./Pictures/cursor.png) 0 1,
+    auto !important;
 }
 
 ::-webkit-scrollbar {
@@ -37,7 +41,8 @@ main {
   /* background-color: #020617; */
   --color: #e1e1e1;
   background-color: #f3f3f3;
-  background-image: linear-gradient(
+  background-image:
+    linear-gradient(
       0deg,
       transparent 24%,
       var(--color) 25%,
@@ -72,7 +77,8 @@ main {
   overflow: hidden;
   --color: #e1e1e1;
   background-color: #f3f3f3;
-  background-image: linear-gradient(
+  background-image:
+    linear-gradient(
       0deg,
       transparent 24%,
       var(--color) 25%,
@@ -121,7 +127,9 @@ nav a h4 {
 }
 
 nav a h4:hover {
-  text-shadow: 2px 2px 5px rgb(254, 254, 254), -1px 1px 0px #000000;
+  text-shadow:
+    2px 2px 5px rgb(254, 254, 254),
+    -1px 1px 0px #000000;
   color: #ff9500;
 }
 .actionBtn {
@@ -133,8 +141,11 @@ button {
   outline: 1px dotted rgb(37, 37, 37);
   outline-offset: -4px;
   background: hsl(0deg 0% 75%);
-  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff,
-    inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+  box-shadow:
+    inset -1px -1px #292929,
+    inset 1px 1px #fff,
+    inset -2px -2px rgb(158, 158, 158),
+    inset 2px 2px #ffffff;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -143,8 +154,11 @@ button {
 }
 
 button:active {
-  box-shadow: inset -1px -1px #fff, inset 1px 1px #292929,
-    inset -2px -2px #ffffff, inset 2px 2px rgb(158, 158, 158);
+  box-shadow:
+    inset -1px -1px #fff,
+    inset 1px 1px #292929,
+    inset -2px -2px #ffffff,
+    inset 2px 2px rgb(158, 158, 158);
 }
 .headingOrpic {
   height: 100%;
@@ -214,12 +228,16 @@ button:active {
 }
 
 .gridbox {
+  height: 18rem;
   max-height: 18rem; /* Maybe change in future 🚀 */
   outline: 1px dotted rgb(144, 140, 140);
   outline-offset: -4px;
   background-color: #020617;
-  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff,
-    inset -2px -2px rgb(255, 255, 255), inset 2px 2px #ffffff;
+  box-shadow:
+    inset -1px -1px #292929,
+    inset 1px 1px #fff,
+    inset -2px -2px rgb(255, 255, 255),
+    inset 2px 2px #ffffff;
   display: flex;
   flex-direction: column;
 }
@@ -232,13 +250,29 @@ button:active {
   border: 2px solid transparent;
   height: 45%;
   overflow: hidden;
+  overflow: clip;
+  overscroll-behavior: none;
 }
 
-#tboximg {
-  object-fit: cover;
-  object-position: center;
+.imgbox a {
+  display: block;
   width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
+
+.imgbox img,
+#tboximg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 10% 0%;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 .teacherimg {
   height: 100%;
 }
@@ -256,8 +290,18 @@ p {
 
 .infobox {
   font-family: "Jost", serif;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 
   /* border: 3px solid greenyellow; */
   height: 60%;
@@ -270,8 +314,18 @@ p {
 p {
   overflow: hidden;
   font-family: "Jost", serif;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 
   color: #f3f3f3;
 }
@@ -308,8 +362,11 @@ p {
   border: 2px solid #d1d1d1;
   outline: 1.5px dotted rgb(37, 37, 37);
   outline-offset: -4px;
-  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff,
-    inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+  box-shadow:
+    inset -1px -1px #292929,
+    inset 1px 1px #fff,
+    inset -2px -2px rgb(158, 158, 158),
+    inset 2px 2px #ffffff;
 }
 #CULOGO {
   width: 50%;
@@ -337,14 +394,27 @@ p {
   margin-bottom: 1rem;
   outline: 1px dotted rgba(0, 0, 0, 0.833);
   outline-offset: -4px;
-  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff,
-    inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+  box-shadow:
+    inset -1px -1px #292929,
+    inset 1px 1px #fff,
+    inset -2px -2px rgb(158, 158, 158),
+    inset 2px 2px #ffffff;
 }
 
 #quote {
   font-family: "Jost", serif;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 
   color: rgb(0, 0, 0);
   font-size: 1.4rem;
@@ -451,8 +521,11 @@ p {
 }
 
 .button:active {
-  box-shadow: inset -1px -1px #fff, inset 1px 1px #292929,
-    inset -2px -2px #ffffff, inset 2px 2px rgb(158, 158, 158);
+  box-shadow:
+    inset -1px -1px #fff,
+    inset 1px 1px #292929,
+    inset -2px -2px #ffffff,
+    inset 2px 2px rgb(158, 158, 158);
 }
 
 /* page4 starting */
@@ -474,8 +547,11 @@ p {
   border: 4px solid#db9602;
   outline: 1px dotted rgba(0, 0, 0, 0.833);
   outline-offset: -4px;
-  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff,
-    inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+  box-shadow:
+    inset -1px -1px #292929,
+    inset 1px 1px #fff,
+    inset -2px -2px rgb(158, 158, 158),
+    inset 2px 2px #ffffff;
   display: inline-block;
   font-size: 40px;
   font-weight: bold;
@@ -500,8 +576,11 @@ p {
   outline: 1px dotted rgb(37, 37, 37);
   outline-offset: -4px;
   background: hsl(0, 0%, 100%);
-  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff,
-    inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+  box-shadow:
+    inset -1px -1px #292929,
+    inset 1px 1px #fff,
+    inset -2px -2px rgb(158, 158, 158),
+    inset 2px 2px #ffffff;
   padding: 6px;
   /* border-radius: 0.3em; */
   width: 70%;
@@ -530,8 +609,18 @@ p {
 
 .fheading h1 {
   font-family: "Jost", serif;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 
   margin-bottom: 3rem;
   /* margin-bottom: 2rem; */
@@ -555,8 +644,18 @@ textarea {
   border: none;
   border-bottom: 1px solid;
   font-family: "Jost", serif;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   font-size: 1.2rem;
 }
 
@@ -608,7 +707,7 @@ textarea {
   margin: 0 auto;
   width: 90%;
 }
- 
+
 label {
   cursor: pointer;
   font-size: 1.5rem;
@@ -649,8 +748,18 @@ footer {
 }
 
 .ftrlhead h1 {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .ftrlhead img {
@@ -665,8 +774,18 @@ footer {
   gap: 1.5rem;
 }
 .ftrllinks a {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   color: whitesmoke;
 }
 .ftrllinks a:hover {
@@ -705,8 +824,18 @@ footer {
 
 .ftrrname h2,
 .ftrrname p {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   color: #020617;
   line-height: 23px;
   overflow: hidden;
@@ -751,15 +880,35 @@ footer {
 .About h2 {
   color: #242424e2;
   margin-bottom: 0.5rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .Visitus a,
 .joinwhtasapp a {
   color: #4e4e4ed9;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .About {
@@ -777,7 +926,7 @@ footer {
   font-weight: 500;
 }
 
-.onSmallScreen{
+.onSmallScreen {
   display: none;
 }
 
@@ -869,7 +1018,6 @@ footer {
     display: block;
     position: fixed;
     left: 100;
-    
   }
 
   #click:checked ~ nav {
@@ -904,60 +1052,58 @@ footer {
   .ftrrlogo img {
     object-position: 3px -11.5px;
   }
-  
+
   .About {
     padding-left: 0.7rem;
   }
-
- 
 }
 
 @media (max-width: 816px) {
-  .ftrlhead h1{
+  .ftrlhead h1 {
     font-size: 1rem;
   }
 
   .ftrlhead img {
     width: 1.5rem;
     height: 1.5rem;
-}
-.ftrlbox{
-  align-items: self-start;
-  justify-content: flex-start;
-  padding-bottom: 12px;
-}
+  }
+  .ftrlbox {
+    align-items: self-start;
+    justify-content: flex-start;
+    padding-bottom: 12px;
+  }
 
-.ftrllinks {
-  margin-left: 0rem;
-  margin-top: 0px;
-}
+  .ftrllinks {
+    margin-left: 0rem;
+    margin-top: 0px;
+  }
 
-.ftrllinks a{
-  font-size: 0.81rem;
-}
+  .ftrllinks a {
+    font-size: 0.81rem;
+  }
 
-  .ftrrbox{
+  .ftrrbox {
     justify-content: space-between;
   }
-  .ftrlogosec{
+  .ftrlogosec {
     flex-direction: column;
     height: auto;
     text-align: center;
   }
 
-  .onSmallScreen{
+  .onSmallScreen {
     display: flex;
     align-items: center;
   }
 
-  #socialid{
+  #socialid {
     width: 3rem;
     border: 2px solid rgba(50, 50, 50, 0.37);
     border-radius: 12px;
     margin: auto 1rem;
   }
 
-  .ftrloid{
+  .ftrloid {
     display: none;
   }
 
@@ -1040,6 +1186,183 @@ footer {
 
 /* #forfooter */
 
+/* ============================================= */
+/* ===== Site Search widget (added) ===== */
+/* ============================================= */
+#siteSearchBtn {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+#siteSearchOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.85);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+  z-index: 999;
+}
+#siteSearchOverlay.open {
+  display: flex;
+}
+
+#siteSearchBox {
+  width: min(560px, 90vw);
+  background: hsl(0, 0%, 100%);
+  outline: 1px dotted rgb(37, 37, 37);
+  outline-offset: -4px;
+  box-shadow:
+    inset -1px -1px #292929,
+    inset 1px 1px #fff,
+    inset -2px -2px rgb(158, 158, 158),
+    inset 2px 2px #ffffff;
+  padding: 4px;
+}
+
+#siteSearchInputWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 2px solid #e1e1e1;
+}
+#siteSearchInputWrap i {
+  color: #ff9500;
+}
+#siteSearchInput {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #020617;
+  font-family: "Jost", serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 1.05rem;
+}
+#siteSearchClose {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 1rem;
+}
+#siteSearchClose:hover {
+  color: #020617;
+}
+
+#siteSearchResults {
+  max-height: 50vh;
+  overflow-y: auto;
+  padding: 8px;
+}
+.siteSearchItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  cursor: pointer;
+  color: #020617;
+}
+.siteSearchItem:hover,
+.siteSearchItem.active {
+  background: #fde047;
+}
+.siteSearchItem i {
+  color: #ff9500;
+  font-size: 1.1rem;
+  width: 22px;
+  text-align: center;
+}
+.siteSearchItem .ssTitle {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+.siteSearchItem .ssDesc {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  color: #666;
+  font-size: 0.82rem;
+  margin-top: 2px;
+}
+#siteSearchEmpty {
+  padding: 26px 16px;
+  text-align: center;
+  color: #888;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+/* ============================================= */
+/* ===== Calculator icon tile (added) ===== */
+/* ============================================= */
+.calcicon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  color: #ff9500;
+  font-size: 4rem;
+}
+
+@media (max-width: 1020px) {
+  #siteSearchBtn {
+    display: flex;
+    position: fixed;
+    top: 1rem;
+    right: 4.2rem;
+    z-index: 3;
+    margin: 0;
+  }
+}
+
 @media (max-width: 1161px) {
   .ftrContiner {
     flex-direction: column;
@@ -1066,20 +1389,19 @@ footer {
   .ftrrlogo {
     width: 3rem;
     height: 3rem;
-}
+  }
 
-.ftrrlogo img {
-  object-position: 2.1px -9px;
-  scale: 4.4;
-}
+  .ftrrlogo img {
+    object-position: 2.1px -9px;
+    scale: 4.4;
+  }
 
   #socialid {
     width: 2rem;
     margin: auto 0.2rem;
   }
 
-  .ftrrname{
+  .ftrrname {
     display: none;
   }
-
 }

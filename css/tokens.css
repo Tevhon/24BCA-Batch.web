@@ -1,0 +1,141 @@
+/* ==========================================================================
+   CU24BCA — Design Tokens
+   Single source of truth for the whole site. Every color, spacing value,
+   radius and shadow used anywhere on the site should come from here.
+   Change a value here and it updates everywhere — that's the point.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand ------------------------------------------------------------
+     Kept the site's original amber/navy identity, just systemized it. */
+  --color-primary: #ea7317;
+  --color-primary-hover: #d5650f;
+  --color-primary-soft: #fdece0;
+  --color-primary-contrast: #ffffff;
+
+  --color-accent: #2f5fd8;      /* secondary accent — links, info badges */
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+  --color-warning: #d97706;
+  --color-info: #2563eb;
+
+  /* ---- Surfaces (light theme default) ---------------------------------- */
+  --color-bg: #f7f7fb;
+  --color-bg-elevated: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f2f6;
+  --color-surface-inverse: #0b0f1a;
+  --color-border: #e4e4ec;
+  --color-border-strong: #cfd0dc;
+
+  --color-text: #14141c;
+  --color-text-secondary: #55566b;
+  --color-text-muted: #8a8a9a;
+  --color-text-inverse: #f4f5f7;
+
+  --color-overlay: rgba(11, 15, 26, 0.55);
+
+  /* ---- Typography -------------------------------------------------------- */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-display: "Plus Jakarta Sans", var(--font-sans);
+
+  --fs-xs: 0.75rem;    /* 12px */
+  --fs-sm: 0.875rem;   /* 14px */
+  --fs-base: 1rem;     /* 16px */
+  --fs-md: 1.125rem;   /* 18px */
+  --fs-lg: 1.25rem;    /* 20px */
+  --fs-xl: 1.5rem;     /* 24px */
+  --fs-2xl: 1.875rem;  /* 30px */
+  --fs-3xl: 2.25rem;   /* 36px */
+  --fs-4xl: 2.75rem;   /* 44px */
+  --fs-5xl: 3.5rem;    /* 56px */
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+
+  /* ---- Spacing scale ------------------------------------------------------ */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* ---- Radius -------------------------------------------------------------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* ---- Shadows (soft, modern — no more inset skeuomorphic borders) -------- */
+  --shadow-xs: 0 1px 2px rgba(16, 18, 30, 0.06);
+  --shadow-sm: 0 2px 8px rgba(16, 18, 30, 0.06), 0 1px 2px rgba(16, 18, 30, 0.04);
+  --shadow-md: 0 8px 24px rgba(16, 18, 30, 0.08), 0 2px 6px rgba(16, 18, 30, 0.05);
+  --shadow-lg: 0 16px 40px rgba(16, 18, 30, 0.12), 0 4px 12px rgba(16, 18, 30, 0.06);
+  --shadow-focus: 0 0 0 3px rgba(234, 115, 23, 0.35);
+
+  /* ---- Motion --------------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+
+  /* ---- Layout ---------------------------------------------------------------- */
+  --header-height: 68px;
+  --container-max: 1240px;
+  --container-pad: clamp(1rem, 4vw, 2.5rem);
+}
+
+/* ---- Dark theme ------------------------------------------------------------
+   Toggled by adding [data-theme="dark"] on <html> (see js/theme.js).
+   Also respects prefers-color-scheme for first-time visitors. */
+:root[data-theme="dark"] {
+  --color-bg: #0b0f1a;
+  --color-bg-elevated: #10141f;
+  --color-surface: #131826;
+  --color-surface-2: #1a2032;
+  --color-surface-inverse: #f7f7fb;
+  --color-border: #262c3f;
+  --color-border-strong: #333b52;
+
+  --color-text: #f4f5f7;
+  --color-text-secondary: #b7bccb;
+  --color-text-muted: #7c8399;
+  --color-text-inverse: #14141c;
+
+  --color-overlay: rgba(0, 0, 0, 0.65);
+
+  --color-primary: #ff9f40;
+  --color-primary-hover: #ffb768;
+  --color-primary-soft: rgba(255, 159, 64, 0.14);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.28), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.36), 0 2px 6px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #0b0f1a;
+    --color-bg-elevated: #10141f;
+    --color-surface: #131826;
+    --color-surface-2: #1a2032;
+    --color-surface-inverse: #f7f7fb;
+    --color-border: #262c3f;
+    --color-border-strong: #333b52;
+    --color-text: #f4f5f7;
+    --color-text-secondary: #b7bccb;
+    --color-text-muted: #7c8399;
+    --color-text-inverse: #14141c;
+    --color-overlay: rgba(0, 0, 0, 0.65);
+    --color-primary: #ff9f40;
+    --color-primary-hover: #ffb768;
+    --color-primary-soft: rgba(255, 159, 64, 0.14);
+  }
+}

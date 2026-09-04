@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&family=Pixelify+Sans:wght@400..700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Pixelify Sans", serif;
+  overflow-x: hidden;
+  text-decoration: none;
+}
+
+body a,
+body button,
+body [role="button"],
+::-webkit-scrollbar-button {
+  cursor: url(../../Pictures/pointer.png) 0 1, auto !important;
+}
+body {
+  cursor: url(../../Pictures/cursor.png) 0 1, auto !important;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  background-color: #000000;
+}
+
+/* ===== Back bar ===== */
+.backbar {
+  background-color: #020617;
+  padding: 1rem 2rem;
+}
+.backbar a {
+  color: #ff9500;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.backbar a:hover {
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Hero (page1) ===== */
+.page1 {
+  width: 100vw;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  --color: #e1e1e121;
+  background-color: #020617;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+  background-size: 45px 45px;
+}
+
+.herdata {
+  gap: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px;
+  width: 75%;
+  margin: 3rem auto;
+}
+.herdata h1 {
+  color: #f3f3f3;
+  font-size: 4rem;
+  font-weight: 800;
+  text-shadow: 2px 1px 0px #ff9500;
+}
+.herdata p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 65%;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ===== Section headings ===== */
+.secheading {
+  text-align: center;
+  padding: 3rem 0 2rem 0;
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #020617;
+}
+.secheading.light {
+  color: #f3f3f3;
+}
+
+/* ===== page2: Why this exists (checkered light) ===== */
+.page2 {
+  --color: #e1e1e1;
+  background-color: #f3f3f3;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+  background-size: 55px 55px;
+  padding-bottom: 3rem;
+}
+
+.whygrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.whybox {
+  background: #fff;
+  outline: 1px dotted rgb(37, 37, 37);
+  outline-offset: -4px;
+  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff, inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+  padding: 1.8rem;
+}
+.whybox i {
+  font-size: 1.8rem;
+  color: #ff9500;
+}
+.whybox h2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.15rem;
+  margin: 0.8rem 0 0.6rem 0;
+  color: #020617;
+}
+.whybox p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* ===== page3: Timeline (dark navy) ===== */
+.page3 {
+  background-color: #0f1524;
+  padding-bottom: 3.5rem;
+}
+
+.timeline {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.tlbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: #020617;
+  border: 3px solid #f9f9f9;
+  box-shadow: 6px 6px 0 #ff9500;
+  padding: 1.4rem 1.6rem;
+}
+
+.tlnum {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ff9500;
+  min-width: 3.5rem;
+}
+
+.tlbox h3 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #f3f3f3;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.tlbox p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(203, 201, 201);
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+/* ===== page4: Team (yellow accent, light) ===== */
+.page4 {
+  background-color: #fde047;
+  padding-bottom: 3.5rem;
+}
+
+.teambox {
+  width: 60%;
+  margin: 0 auto;
+  background: #fff;
+  outline: 1px dotted rgb(37, 37, 37);
+  outline-offset: -4px;
+  box-shadow: inset -1px -1px #292929, inset 1px 1px #fff, inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.teambox img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #020617;
+}
+
+.teamdata h2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.4rem;
+  color: #020617;
+}
+
+.teamdata p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #555;
+  margin-top: 0.2rem;
+}
+
+.teamlinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.9rem;
+}
+.teamlinks a {
+  font-size: 1.3rem;
+  color: #020617;
+}
+.teamlinks a:hover {
+  color: #ff9500;
+}
+
+/* ===== Footer ===== */
+.abtfooter {
+  background-color: #070b15;
+  color: #f3f3f3;
+  text-align: center;
+  padding: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1020px) {
+  .herdata h1 { font-size: 2.8rem; }
+  .herdata p { width: 100%; font-size: 1rem; }
+  .whygrid { grid-template-columns: 1fr; width: 90%; }
+  .timeline { width: 90%; }
+  .teambox { width: 90%; flex-direction: column; text-align: center; }
+  .secheading { font-size: 2rem; }
+}
